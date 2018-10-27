@@ -1,0 +1,101 @@
+<div class="app">
+        <div class="layout" [ngClass]="headerSelected">
+    
+            <div [ngClass]="sidenavSelected">
+                <!-- Side Nav START -->
+                <div class="side-nav comp-side-width" sideBar>
+                    <div class="side-nav-inner">
+                        <div class="page-title padding-15">                        
+                            <b class="font-size-24">Settings</b>                  
+                        </div>
+    
+                        <ul class="side-nav-menu scrollable border-top border-right">
+                            <li class="nav-item tab-bottom" routerLinkActive="active">                            
+                                <a class="" [routerLink]="['/dashboard']">                                                             
+                                    <span class="title font-size-16">Dashboard</span>
+                                </a>
+                            </li>
+    
+                            <li class="nav-item tab-bottom">
+                                <a routerLink="">                                
+                                    <span class="title font-size-16">Settings</span>
+                                </a>
+                            </li>                       
+    
+                            <li class="nav-item tab-bottom">
+                                <a routerLink="/flock">                                                              
+                                    <span class="title font-size-16">Flock</span>                                
+                                </a>                           
+                            </li>
+                            
+                            <li class="nav-item tab-bottom">
+                                <a routerLink="">                               
+                                    <span class="title font-size-16">Records</span>
+                                </a>
+                            </li>
+    
+                            <li class="nav-item tab-bottom">
+                                <a routerLink="/inventory">                                                              
+                                    <span class="title font-size-16">Inventory</span>                                
+                                </a>                           
+                            </li>
+    
+                            <li class="nav-item tab-bottom">
+                                <a routerLink="">                                                              
+                                    <span class="title font-size-16">Sales</span>                                
+                                </a>                            
+                            </li>  
+                            
+                            <li class="nav-item tab-bottom">
+                                <a routerLink="">                               
+                                    <span class="title font-size-16">Expenses</span>
+                                </a>
+                            </li>
+    
+                            <li class="nav-item tab-bottom">
+                                <a routerLink="">                                
+                                    <span class="title font-size-16">Advanced</span>
+                                </a>
+                            </li>
+                            
+                        </ul>                   
+    
+                    </div>
+                </div>
+                <!-- Side Nav END -->
+    
+                <!-- Page Container START -->
+                <div class="page-container page-height page-pdd-left">
+    
+                    <!-- Top Nav START -->
+                    <div class="header header-comp-width navbar">
+                        <div class="header-container">
+                            <ul class="nav-left">                     
+                            </ul>                        
+                            <ul class="nav-right padding-15">  
+                                <i class="ti-close font-size-24" (click)="close()"></i>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Top Nav END -->                
+    
+                    <!-- Content Wrapper START -->
+                    <div class="main-content">
+                        <router-outlet></router-outlet>
+                    </div>               
+                    
+                    <!-- Content Wrapper END -->  
+    
+                </div>
+                <!-- Page Container END -->
+                <div class="row min-height-50">
+                        <div class="col-md-12 pdd-horizon-30 set-footer">
+                            <div class="col-md-12 mrg-top-10">
+                                    <button class="btn btn-inverse btn-sm float-right">Done</button>
+                            </div>                        
+                        </div>
+                    </div>
+    
+             </div>
+        </div>    
+    </div>

@@ -1,0 +1,549 @@
+<div class="app">
+    <div class="layout" [ngClass]="headerSelected">
+
+        <div [ngClass]="sidenavSelected">
+            <!-- Side Nav START -->
+            <div class="settings-side-nav comp-side-width bg-set nav-right-1" sideBar>
+                <div class="settings-nav-inner nav-vertical">
+                    <div class="page-title padding-15">                        
+                        <b class="font-size-24">Settings</b>                  
+                    </div>
+
+                    <ul class="settings-menu scrollable nav-top-1  nav nav-pills settings-nav-pills " role="tablist">
+                        
+                        <li class="nav-item nav-btm-1 no-mrg-btm">
+                            <a href="#company" class="nav-link active com" role="tab" data-toggle="tab" (click)="tabs='Company'">                                
+                                <span class="title font-size-16">Company</span>
+                            </a>
+                        </li>                       
+
+                        <li class="nav-item nav-btm-1 no-mrg-btm">
+                            <a href="#flock" class="nav-link" role="tab" data-toggle="tab" (click)="tabs='Flock'">                                                              
+                                <span class="title font-size-16">Flock</span>                                
+                            </a>                           
+                        </li>
+                        
+                        <li class="nav-item nav-btm-1 no-mrg-btm">
+                            <a href="#records" class="nav-link" role="tab" data-toggle="tab" (click)="tabs='Records'">                               
+                                <span class="title font-size-16">Records</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item nav-btm-1 no-mrg-btm">
+                            <a href="#inventory" class="nav-link" role="tab" data-toggle="tab" (click)="tabs='Inventory'">                                                              
+                                <span class="title font-size-16">Inventory</span>                                
+                            </a>                           
+                        </li>
+
+                        <li class="nav-item nav-btm-1 no-mrg-btm">
+                            <a href="#sales" class="nav-link" role="tab" data-toggle="tab" (click)="tabs='Sales'">                                                              
+                                <span class="title font-size-16">Sales</span>                                
+                            </a>                            
+                        </li>  
+                        
+                        <li class="nav-item nav-btm-1 no-mrg-btm">
+                            <a href="#expenses" class="nav-link" role="tab" data-toggle="tab" (click)="tabs='Expenses'">                               
+                                <span class="title font-size-16">Expenses</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item nav-btm-1 no-mrg-btm">
+                            <a href="#advanced" class="nav-link" role="tab" data-toggle="tab" (click)="tabs='Advanced'">                                
+                                <span class="title font-size-16">Advanced</span>
+                            </a>
+                        </li>
+                        
+                    </ul>                   
+
+                </div>
+            </div>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container page-height page-pdd-left">
+
+                <!-- Top Nav START -->
+                <div class="header header-comp-width navbar bg-set">
+                    <div class="header-container">
+                        <ul class="nav-left padding-15"> 
+                              <b class="font-size-24 text-dark">{{tabs}}</b>
+                        </ul>                        
+                        <ul class="nav-right padding-15">  
+                            <i class="ti-close font-size-24" (click)="close()"></i>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Top Nav END -->                
+
+                <!-- Content Wrapper START -->
+                <div class="main-content page-height">
+                    <!--<router-outlet></router-outlet>-->
+                    <!-- TAB FUNCTION START-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="company">
+                                        <div class="pdd-horizon-15">
+                                            <h4><b>Company Settings</b></h4>
+                                            <form (ngSubmit)="companySubmit(com)"> 
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label>Name</label>
+                                                                <input type="text" class="form-control" [(ngModel)]="com.name" name="Name">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Type</label>
+                                                                <input type="text" class="form-control" [(ngModel)]="com.type" name="Type">
+                                                            </div>
+
+                                                            <div class="checkbox">
+                                                                <input id="view" name="view" type="checkbox" [(ngModel)]="com.view" name="View">
+                                                                <label for="view">View</label>
+                                                            </div>
+                                                            <div class="checkbox">
+                                                                <input id="save" name="save" type="checkbox" [(ngModel)]="com.save" name="Save">
+                                                                <label for="save">Save</label >
+                                                            </div>
+                                                            <div class="checkbox">
+                                                                <input id="edit" name="edit" type="checkbox" [(ngModel)]="com.edit" name="Edit">
+                                                                <label for="edit">Edit</label>
+                                                            </div>
+                        
+                                                            <div class="checkbox">
+                                                                <input id="delete" name="delete" type="checkbox" [(ngModel)]="com.delete" name="Delete">
+                                                                <label for="delete">Delete</label>
+                                                            </div>
+
+                                                            <div class="radio radio-inline">
+                                                                <input type="radio" name="form-3" id="form-3-1" [(ngModel)]="com.access" value="Admin" [checked]="true">
+                                                                <label for="form-3-1">Admin</label>
+                                                            </div>
+                                                            <div class="radio radio-inline">
+                                                                <input type="radio" name="form-3" id="form-3-2" [(ngModel)]="com.access" value="Manager" [checked]="true">
+                                                                <label for="form-3-2">Manager</label>
+                                                            </div>
+                                                            <div class="radio radio-inline">
+                                                                <input type="radio" name="form-3" id="form-3-3" [(ngModel)]="com.access" value="User" [checked]="true">
+                                                                <label for="form-3-3">User</label>
+                                                            </div>
+
+
+                                                        </div>
+                                                      <!--  <div class="col-md-3">
+                                                            dgdfgdfgd
+                                                        </div>-->
+                                                    </div>
+
+                                                    <button class="btn btn-info">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- FLOCK FUNCTION START-->
+                                    <div role="tabpanel" class="tab-pane fade" id="flock">
+                                        <div class="pdd-horizon-15">
+                                            <h4><b>Flock Settings</b></h4>
+                                            <form (ngSubmit)="flockSubmit(flock)">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="flock.name" name="Names">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Process</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="flock.process" name="Process">
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="f-view" name="f-view" type="checkbox" [(ngModel)]="flock.view">
+                                                            <label for="f-view">View</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="f-save" name="f-save" type="checkbox" [(ngModel)]="flock.save">
+                                                            <label for="f-save">Save</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="f-edit" name="f-edit" type="checkbox" [(ngModel)]="flock.edit">
+                                                            <label for="f-edit">Edit</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="f-delete" name="f-delete" type="checkbox" [(ngModel)]="flock.delete">
+                                                            <label for="f-delete">Delete</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-2" id="form-2-1" [(ngModel)]="flock.access" value="Admin" [checked]="true">
+                                                            <label for="form-2-1">Admin</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-2" id="form-2-2" [(ngModel)]="flock.access" value="Manager" [checked]="true">
+                                                            <label for="form-2-2">Manager</label>
+                                                        </div>
+                                                        
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-2" id="form-2-3" [(ngModel)]="flock.access" value="User" [checked]="true">
+                                                            <label for="form-2-3">User</label>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-info">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- FLOCK FUNCTION END -->
+
+                                    <!-- RECORDS FUNCTION START -->
+
+                                    <div role="tabpanel" class="tab-pane fade" id="records">
+                                        <div class="pdd-horizon-15">
+                                                <h4><b>Records</b></h4>
+                                            <form (ngSubmit)="recSubmit(rec)">                                                
+                                                <div class="row">                                                   
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="rec.name" name="RecName">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Records</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="rec.records" name="Records">
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="r-view" name="r-view" type="checkbox" [(ngModel)]="rec.view" name="View">
+                                                            <label for="r-view">View</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <input id="r-save" name="r-save" type="checkbox" [(ngModel)]="rec.save" name="Save">
+                                                            <label for="r-save">Save</label >
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <input id="r-edit" name="r-edit" type="checkbox" [(ngModel)]="rec.edit" name="Edit">
+                                                            <label for="r-edit">Edit</label>
+                                                        </div>
+                    
+                                                        <div class="checkbox">
+                                                            <input id="r-delete" name="r-delete" type="checkbox" [(ngModel)]="rec.delete" name="Delete">
+                                                            <label for="r-delete">Delete</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-1" id="form-1-1" [(ngModel)]="rec.access" value="Admin" [checked]="true">
+                                                            <label for="form-1-1">Admin</label>
+                                                        </div>
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-1" id="form-1-2" [(ngModel)]="rec.access" value="Manager" [checked]="true">
+                                                            <label for="form-1-2">Manager</label>
+                                                        </div>
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-1" id="form-1-3" [(ngModel)]="rec.access" value="User" [checked]="true">
+                                                            <label for="form-1-3">User</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-info">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- RECORDS FUNCTION END -->
+
+                                    <!-- INVENTORY FUNCTION START-->
+
+                                    <div role="tabpanel" class="tab-pane fade" id="inventory">
+                                        <div class="pdd-horizon-15">
+                                            <h4><b>Inventory Settings</b></h4>
+                                            <form (ngSubmit)="invSubmit(inv)">
+                                                <div class="row">                                                   
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="inv.name" name="Name">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Average</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="inv.avg" name="Avg">
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="i-view" name="i-view" type="checkbox" [(ngModel)]="inv.view">
+                                                            <label for="i-view">View</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="i-save" name="i-save" type="checkbox" [(ngModel)]="inv.save">
+                                                            <label for="i-save">Save</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="i-edit" name="i-edit" type="checkbox" [(ngModel)]="inv.edit">
+                                                            <label for="i-edit">Edit</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="i-delete" name="i-delete" type="checkbox" [(ngModel)]="inv.delete">
+                                                            <label for="i-delete">Delete</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-4" id="form-4-1" [(ngModel)]="inv.access" value="Admin" [checked]="true">
+                                                            <label for="form-4-1">Admin</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-4" id="form-4-2" [(ngModel)]="inv.access" value="Manager" [checked]="true">
+                                                            <label for="form-4-2">Manager</label>
+                                                        </div>
+                                                        
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-4" id="form-4-3" [(ngModel)]="inv.access" value="User" [checked]="true">
+                                                            <label for="form-4-3">User</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-info">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- INVENTORY FUNCTION END-->
+
+                                    <!-- SALES FUNCTION START -->
+                                    <div role="tabpanel" class="tab-pane fade" id="sales">
+                                        <div class="pdd-horizon-15">
+                                            <h4><b>Sales Settings</b></h4>
+                                            <form (ngSubmit)="saleSubmit(sale)">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="sale.name" name="Name">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Options</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="sale.opt" name="Opt">
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="s-view" name="s-view" type="checkbox" [(ngModel)]="sale.view">
+                                                            <label for="s-view">View</label>
+                                                        </div>
+    
+                                                        <div class="checkbox">
+                                                            <input id="s-save" name="s-save" type="checkbox" [(ngModel)]="sale.save">
+                                                            <label for="s-save">Save</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="s-edit" name="s-edit" type="checkbox" [(ngModel)]="sale.edit">
+                                                            <label for="s-edit">Edit</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="s-delete" name="s-delete" type="checkbox" [(ngModel)]="sale.delete">
+                                                            <label for="s-delete">Delete</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-5" id="form-5-1" [(ngModel)]="sale.access" value="Admin" [checked]="true">
+                                                            <label for="form-5-1">Admin</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-5" id="form-5-2" [(ngModel)]="sale.access" value="Manager" [checked]="true">
+                                                            <label for="form-5-2">Manager</label>
+                                                        </div>
+                                                        
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-5" id="form-5-3" [(ngModel)]="sale.access" value="User" [checked]="true">
+                                                            <label for="form-5-3">User</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-info">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- SALES FUNCTION END -->
+
+                                    <!-- EXPENSES FUNCTION START-->
+
+                                    <div role="tabpanel" class="tab-pane fade" id="expenses">
+                                        <div class="pdd-horizon-15">
+                                            <h4><b>Expenses Settings</b></h4>
+                                            <form (ngSubmit)="expSubmit(ex)">
+                                                <div class="row">                                                   
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="exp.name" name="Name">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Options</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="exp.opt" name="Opt">
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="e-view" name="e-view" type="checkbox" [(ngModel)]="exp.view">
+                                                            <label for="e-view">View</label>
+                                                        </div>
+    
+                                                        <div class="checkbox">
+                                                            <input id="e-save" name="e-save" type="checkbox" [(ngModel)]="exp.save">
+                                                            <label for="e-save">Save</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="e-edit" name="e-edit" type="checkbox" [(ngModel)]="exp.edit">
+                                                            <label for="e-edit">Edit</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="e-delete" name="e-delete" type="checkbox" [(ngModel)]="exp.delete">
+                                                            <label for="e-delete">Delete</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-6" id="form-6-1" [(ngModel)]="exp.access" value="Admin" [checked]="true">
+                                                            <label for="form-6-1">Admin</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-6" id="form-6-2" [(ngModel)]="exp.access" value="Manager" [checked]="true">
+                                                            <label for="form-6-2">Manager</label>
+                                                        </div>
+                                                        
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-6" id="form-6-3" [(ngModel)]="exp.access" value="User" [checked]="true">
+                                                            <label for="form-6-3">User</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-info">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- EXPENSES FUNCTION END-->
+
+                                    <!-- ADVENCED FUNCTION START-->
+                                    <div role="tabpanel" class="tab-pane fade" id="advanced">
+                                        <div class="pdd-horizon-15">
+                                            <h4><b>Advanced Settings</b></h4>
+                                            <form (ngSubmit)="advSubmit(adv)">
+                                                <div class="row">                                                    
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="adv.name" name="Name">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Options</label>
+                                                            <input type="text" class="form-control" [(ngModel)]="adv.opt" name="Name">
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="a-view" name="a-view" type="checkbox" [(ngModel)]="adv.view">
+                                                            <label for="a-view">View</label>
+                                                        </div>
+    
+                                                        <div class="checkbox">
+                                                            <input id="a-save" name="a-save" type="checkbox" [(ngModel)]="adv.save">
+                                                            <label for="a-save">Save</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="a-edit" name="a-edit" type="checkbox" [(ngModel)]="adv.edit">
+                                                            <label for="a-edit">Edit</label>
+                                                        </div>
+
+                                                        <div class="checkbox">
+                                                            <input id="a-delete" name="a-delete" type="checkbox" [(ngModel)]="adv.delete">
+                                                            <label for="a-delete">Delete</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-7" id="form-7-1" [(ngModel)]="adv.access" value="Admin" [checked]="true">
+                                                            <label for="form-7-1">Admin</label>
+                                                        </div>
+
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-7" id="form-7-2" [(ngModel)]="adv.access" value="Manager" [checked]="true">
+                                                            <label for="form-7-2">Manager</label>
+                                                        </div>
+                                                        
+                                                        <div class="radio radio-inline">
+                                                            <input type="radio" name="form-7" id="form-7-3" [(ngModel)]="adv.access" value="User" [checked]="true">
+                                                            <label for="form-7-3">User</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-info">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- ADVANCED FUNCTION END-->
+                                </div>
+                            </div>
+                        </div>
+                    <!-- TAB FUNCTION END -->
+                </div>               
+                
+                <!-- Content Wrapper END -->  
+
+            </div>
+            <!-- Page Container END -->
+            <!-- <div class="row min-height-50">
+                <div class="col-md-12 pdd-horizon-30 set-footer">
+                    <div class="col-md-12 mrg-top-10">
+                        <button class="btn btn-inverse btn-sm float-right">Done</button>
+                    </div>                        
+                </div>
+            </div> -->
+
+          <!--  <div class="row min-height-38">
+                <div class="col-md-12 pdd-horizon-30 set-footer">
+                    <div class="col-md-12">
+                        <button class="btn btn-xs btn-default float-right button-top">Done</button>
+                    </div>                        
+                </div>
+            </div> -->
+
+         </div>  
+
+    </div>
+    
+     <div class="row min-height-38">
+        <div class="col-md-12 pdd-horizon-30 set-footer">
+            <div class="col-md-12">
+                <button class="btn btn-xs btn-default float-right button-top">Done</button>
+            </div>                        
+        </div>
+    </div> 
+
+</div>
+
+<!-- <div class="row min-height-38">
+    <div class="col-md-12 pdd-horizon-30 set-footer">
+        <div class="col-md-12">
+            <button class="btn btn-xs btn-default float-right button-top">Done</button>
+        </div>                        
+    </div>
+</div> -->

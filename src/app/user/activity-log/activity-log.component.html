@@ -1,0 +1,60 @@
+<div class="container-fluid">
+
+  <!-- Page Title Start-->
+  <div class="page-title mrg-btm-30">
+      <b class="font-size-24 text-dark">Activity Log</b>
+  </div>
+  <!-- Page Title End -->
+
+  <div class="card">
+  <div class="card-block">    
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="row">
+      <div class="col-md-6">
+          <button class="btn btn-default btn-sm"><span class="font-size-16">Filter</span> <i class="ti-angle-down font-size-10"></i></button>
+          <span class="pdd-left-30 font-size-16">Dinesh Kumar</span> <span class="pdd-left-25"><i class="ti-close"></i></span>
+          <span class="pdd-left-20 font-size-16">This Month</span> <span class="pdd-left-25"><i class="ti-close"></i></span>
+          <span class="pdd-left-20 font-size-16">Clear filter/View all</span>
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-3">        
+        <i class="ti-printer font-size-24 float-right"></i>
+        <i class="ti-upload font-size-24 pdd-right-15 float-right"></i>
+      </div>
+      </div>
+          <div class="pdd-top-20 table-overflow">
+            <table class="table"  datatable [dtOptions]="dtOptions">
+              <thead>
+                <tr>
+                  <th class="tab-bottom tbl-border-right border-tab-top">ACTIVITY DATE</th>
+                  <th class="tab-bottom tbl-border-right border-tab-top">USER</th>
+                  <th class="tab-bottom tbl-border-right border-tab-top">EVENT</th>
+                  <th class="tab-bottom text-center border-tab-top">DETAILS</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr >
+                  <td class="tbl-border-right">Sep 10, 10:30am IST</td>
+                  <td class="tbl-border-right">Sanjay Kumar</td>
+                  <td class="tbl-border-right">Added new user : Ramji</td>
+                  <td class="text-center">View</td>
+                </tr>
+
+                <tr>
+                  <td class="tbl-border-right">Sep 10, 2:30pm IST</td>
+                  <td class="tbl-border-right">Pradeep</td>
+                  <td class="tbl-border-right">Edit new user : Kumaran</td>
+                  <td class="text-center">View</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>        
+    </div>
+  </div>
+  </div>
+  </div>
+
+</div>

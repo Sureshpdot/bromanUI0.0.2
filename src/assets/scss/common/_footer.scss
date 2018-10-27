@@ -1,0 +1,359 @@
+.content-footer {
+	padding: 0px 30px;
+
+    .footer {
+    	padding: 20px 0;
+    	font-size: 90%;
+    	border-top: 1px solid $border-color;
+
+    	.go-right {
+    		float: right;
+    	}
+    }
+}
+
+
+.ico-text {
+	top: -2px;
+	position: relative;
+}
+.top-ico {
+	top: 2px ;
+	position: relative;
+}
+.nav-footer {
+	position:absolute !important;
+	bottom:0px !important;	
+}
+.nav-footer-top {
+	border-top: 1px solid #e6ecf5;
+	padding-top: 12px;
+}
+.entry-width {
+	width: 540px !important;
+}
+.farm-width {
+	width: 510px !important;
+}
+.user-width{
+	min-width: 5rem !important;
+}
+.acc-bottom {
+	border-bottom: 5px solid #707070 !important;
+}
+.tab-bottom {
+	border-bottom: 2px solid !important;
+}
+.nav-btm-1{
+	border-bottom: 1px solid !important;
+}
+.nav-top-1{
+	border-top: 1px solid !important;
+}
+.nav-right-1 {
+	border-right: 1px solid !important;
+}
+.body-top{
+	border-top: 4px solid !important;
+}
+.mrg-lft-14{
+	margin-left: 14% !important;
+}
+.width-81 {
+	width: 81% !important;
+}
+.min-height-50{
+	min-height: 50px;
+}
+.min-height-100{
+	min-height: 100px;
+}
+.min-height-35{
+	min-height: 35px !important;
+}
+.disp-inline{
+	display: -webkit-inline-box !important;
+}
+/*.table > tbody > tr > td {
+	border-right: 2px solid #dee2e6 !important;
+	border-bottom: 1px solid white !important;	
+}
+.table > thead > tr > th {
+	border-right: 2px solid #dee2e6 !important;
+	border-top: 1px solid white !important;
+}*/
+.border-tab-top{
+	border-top:  0px !important;
+}
+.dataTables_info{
+	padding-top: 20px !important;
+}
+.dataTables_paginate{
+	padding-top: 20px !important;
+}
+.lh-25{
+	line-height: 25px !important;
+}
+.lh-35{
+	line-height: 35px !important;
+}
+//SWAL
+.swal2-header{
+	align-items: flex-start !important;
+	font-size : 14px !important;
+}
+#swal2-content{
+	text-align: left !important;
+}
+//COMPANY SETTINGS
+.comp-side-width{
+	width: 170px !important;
+	bottom: 50px !important;
+}
+.page-pdd-left {
+	padding-left: 170px !important;
+}
+.header-comp-width{
+	width: calc(100% - 170px) !important;
+}
+
+.border-right{
+	border-right: 2px solid !important;
+}
+.tbl-border-right {
+	border-right: 1px solid #e6ecf5 !important;
+}
+.border-top {
+	border-top: 2px solid !important;
+}
+.page-height{
+	//min-height: 94vh !important;
+	min-height: calc(100vh - 50px) !important;
+}
+.set-footer{
+	background-color:#414141;
+}
+@media only screen and (max-width: 992px){
+	.side-nav {
+		left: -0px !important; 	   
+	}
+	   
+}
+
+@media only screen and (max-width : 1280px){
+	.settings-nav-inner {
+		position: relative !important;
+		height: 100% !important;
+	}
+	.page-height{
+		//min-height: 94vh !important;
+		min-height: calc(100vh - 50px) !important;
+	}
+	.comp-side-width{
+		width: 170px !important;
+		bottom: 50px !important;
+	}
+}
+.side-nav-footer {
+	width: 279px !important;
+	padding: 0px 20px;	
+	bottom:10px;
+	position : absolute;
+	border-top: 1px solid $border-color;	
+	@include transition(all 0.2s ease); 
+}
+.bg-set{
+	background-color: #F6F7FB !important;
+}
+
+//SIDE NAV
+.mrg-rgt-20{
+	margin-right: -20px !important;
+}
+
+//COMPANY SIDE NAV
+.settings-nav-pills{	
+	width: 170px !important;
+}
+
+.nav-pills > li > a.active.nav-link {  
+	color: #ffffff !important; 
+	background-color: #c7c6ce !important;
+	border-radius: 0px;
+	border-color: #c7c6ce !important;
+     
+}
+.min-height-38{
+	min-height: 50px !important;
+	position: sticky !important;
+}
+
+.settings-side-nav{		
+	z-index: 1000 !important;
+	top: 0px !important;	
+	position: fixed !important;
+	overflow: hidden !important;
+	@include transition(all 0.2s ease); 
+	@include print {
+		display: none;
+	}	
+
+	.settings-nav-inner {
+		position: relative;
+		height: 100%;
+	}
+
+	.settings-menu {
+		height: auto !important;
+		position: relative !important;
+		list-style: none !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		overflow: auto !important;
+		border-right: 1px solid #e6ecf5 !important;
+		@include clearfix;
+
+		li {
+			position: relative;
+			display: block;
+
+			&.dropdown {
+				.arrow {
+					position: absolute;
+					right: 50px;
+					line-height: 40px;
+					font-size: 10px;
+					@include transition(all 0.05s ease-in);
+
+					@include screen-tablet {
+						right: 25px;
+					}
+				}
+
+				&.open {
+					> a {
+						color: $default-dark;
+
+						.icon-holder {
+							color: $default-info;
+						}
+
+						>.arrow {
+							@include transform(rotate(90deg));
+						}
+					}
+
+					>.dropdown-menu {
+						display: block;
+
+						.dropdown-menu {
+							padding-left: 20px;	
+						}
+
+						.arrow {
+							line-height: 25px;
+						}
+					}
+
+				}
+			}
+
+			a {
+				color: $default-text-color;
+				@include transition(all 0.3s ease); 
+				
+				&:hover,
+				&:focus {
+					text-decoration: none;
+					color: $default-dark;
+
+					.icon-holder {
+						color: $default-info;
+					}
+				}
+			}
+
+
+
+		}
+
+		>li {
+				
+			&.dropdown {
+				
+				ul {
+					&.dropdown-menu {
+						position: relative;
+						width: 100%;
+						box-shadow: none;
+						border: 0px;
+						border-radius: 0;
+						padding-left: 50px;
+						padding-top: 0px;
+						background-color: transparent;
+						float: none;
+						
+						> li {
+							
+							> a {
+								padding: 10px 15px;
+
+								&:hover,
+								&:focus {
+									background-color: transparent;
+									color: $default-dark;
+								}
+							}
+
+							&.active {
+
+								a {
+									color: $default-dark;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			> a{
+				position: relative;
+				display: block;
+				padding: 10px 15px;
+				font-weight: 500;
+				font-size: 15px;
+				white-space: nowrap;
+				
+				.icon-holder {
+					display: inline-block;
+					height: 35px;
+					width: 35px;
+					line-height: 35px;
+					text-align: center;
+					position: relative;
+					left: 0;
+					margin-right: 14px;
+					font-size: 17px;
+					border-radius: 6px;
+					@include transition(all 0.3s ease); 
+				}
+			}
+		}
+
+
+
+
+
+	}
+}
+
+
+.button-top {
+	top: 15px !important;
+	position: inherit !important;
+}
+
+.title-center {
+	top: 16px !important;
+	position: absolute;
+}

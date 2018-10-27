@@ -1,0 +1,552 @@
+<div class="app" [ngClass]="
+    {
+        'is-collapsed': app.layout.isMenuCollapsed,
+        'is-opened': app.layout.isMenuOpened,
+        'rtl' : app.layout.rtlActived
+    }">
+    <div class="layout" [ngClass]="headerSelected">
+
+        <div [ngClass]="sidenavSelected">
+            <!-- Side Nav START -->
+            <div class="side-nav" sideBar>
+                <div class="side-nav-inner">
+                    <div class="side-nav-logo">
+                        <a href="" [routerLink]="['/dashboard']">
+                            <div class="logo logo-dark" style="background-image: url('assets/images/logo/logo.png')"></div>
+                            <div class="logo logo-white" style="background-image: url('assets/images/logo/logo-white.png')"></div>
+                        </a>
+                        <div class="mobile-toggle side-nav-toggle">
+                            <a href="javascript:void(0);" (click)="app.layout.isMenuCollapsed = !app.layout.isMenuCollapsed">
+                                <i class="ti-arrow-circle-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="side-nav-menu scrollable">
+                        <li clas="nav-item" routerLinkActive="active">
+                            <a class="mrg-top-30" [routerLink]="['/dashboard']">
+                                <span class="icon-holder">
+                                    <i class="ti-home"></i>
+                                </span>
+                                <span class="title font-size-16">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a routerLink="/flock" class="dropdown-toggle">
+                                <span class="icon-holder">
+                                    <i class=""></i>
+                                </span>
+                                <span class="font-size-16 title-center">Flock</span> 
+                                <span class="arrow mrg-rgt-20">
+                                    <i class="ti-angle-right"></i>
+                                </span>                               
+                            </a>                           
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle">
+                                <span class="icon-holder">
+                                    <i class=""></i>
+                                </span>
+                                <span class="title font-size-16 title-center">Record Keeping</span>  
+                                <span class="arrow mrg-rgt-20">
+                                    <i class="ti-angle-right"></i>
+                                </span>                             
+                            </a>                            
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a routerLink="/inventory" class="dropdown-toggle">
+                                <span class="icon-holder">
+                                    <i class=""></i>
+                                </span>
+                                <span class="title font-size-16 title-center">Inventory</span> 
+                                <span class="arrow mrg-rgt-20">
+                                    <i class="ti-angle-right"></i>
+                                </span>                                                             
+                            </a>                           
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle">
+                                <span class="icon-holder">
+                                    <i class=""></i>
+                                </span>
+                                <span class="title font-size-16 title-center">Sales</span>
+                                <span class="arrow mrg-rgt-20">
+                                    <i class="ti-angle-right"></i>
+                                </span>
+                            </a>                            
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle">
+                                <span class="icon-holder">
+                                    <i class=""></i>
+                                </span>
+                                <span class="title font-size-16 title-center">Expenses</span>  
+                                <span class="arrow mrg-rgt-20">
+                                    <i class="ti-angle-right"></i>
+                                </span>                              
+                            </a>                            
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a routerLink="/reports" class="dropdown-toggle">
+                                <span class="icon-holder">
+                                    <i class=""></i>
+                                </span>
+                                <span class="title font-size-16 title-center">Reports</span> 
+                                <span class="arrow mrg-rgt-20">
+                                    <i class="ti-angle-right"></i>
+                                </span>                                
+                            </a>                            
+                        </li>  
+                        
+                        <!-- <li class="nav-footer">
+                            <a class="dropdown-toggle">                            
+                            <div class="col-md-12 nav-footer-top">
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <a>
+                                            <i class="fa fa-address-book-o font-size-24"></i>
+                                            <br>
+                                            <span style="white-space: normal;word-wrap: break-word;"><small>Community</small></span>
+                                        </a>                                        
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <a>
+                                            <i class="fa fa-info font-size-24"></i>
+                                            <br>
+                                            <span><small>Help</small></span>
+                                        </a> 
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <a>
+                                            <i class="fa fa-phone font-size-24"></i>
+                                            <br>
+                                            <span><small>Support</small></span>
+                                        </a> 
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </li> -->
+
+                        
+
+                                                                 
+                        <div class="side-nav-footer">     
+                                   
+                                        <div class="row pdd-top-10">
+                                            <div class="col-md-4 text-center no-pdd-right">
+                                                <a>
+                                                    <i class="fa fa-address-book-o font-size-24"></i>
+                                                    <br>
+                                                    <span>Community</span>
+                                                </a> 
+                                            </div>
+                                            <div class="col-md-4 text-center">
+                                                <a>
+                                                    <i class="fa fa-info font-size-24"></i>
+                                                    <br>
+                                                    <span>Help</span>
+                                                </a> 
+                                            </div>
+                                                <div class="col-md-4 text-center">
+                                                    <a>
+                                                        <i class="fa fa-phone font-size-24"></i>
+                                                        <br>
+                                                        <span>Support</span>
+                                                    </a> 
+                                                </div>
+                                        </div>
+                                   
+                        </div>
+                    </ul>                    
+                </div>
+            </div>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+
+                <!-- Top Nav START -->
+                <div class="header navbar">
+                    <div class="header-container">
+                        <ul class="nav-left">
+                            <li>
+                                <a class="side-nav-toggle" href="javascript:void(0);" (click)="app.layout.isMenuCollapsed = !app.layout.isMenuCollapsed">
+                                    <i class="ti-view-grid font-size-18"></i>
+                                </a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="ti-power-off font-size-18"></i>
+                                    <span class="pdd-left-5 ico-text">New Entry</span>
+                                </a>
+                                <ul class="dropdown-menu entry-width">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <li class="mrg-vertical-15">
+                                                    <span class="text-black font-size-18">Record</span>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/egg-entry">                                                     
+                                                        <span class="text-black">Egg Collection</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/feed-entry">
+                                                        <span class="text-black">Feed Consumption</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/mortality-entry">
+                                                        <span class="text-black">Mortality</span>
+                                                    </a>
+                                                </li> 
+                                                
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/cull-entry">
+                                                        <span class="text-black">Cull</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/vaccine-entry">
+                                                        <span class="text-black"  style="white-space: normal;word-wrap: break-word;">Vaccine Administration</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a href="">
+                                                        <span class="text-black">Debeaking</span>
+                                                    </a>
+                                                </li>
+
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <li class="mrg-vertical-15">
+                                                    <span class="text-black font-size-18">Accounts</span>
+                                                </li>
+    
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/invoice">                                                     
+                                                        <span class="text-black">Invoice</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/receipt">                                                     
+                                                        <span class="text-black">Receipt</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/expenses">                                                     
+                                                        <span class="text-black">Expenses</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/purchase">                                                     
+                                                        <span class="text-black">Purchase</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/payment">                                                     
+                                                        <span class="text-black">Payment</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/supplier">
+                                                        <span class="text-black">Supplier</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/customer">
+                                                        <span class="text-black">Customer</span>
+                                                    </a>
+                                                </li>
+    
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <li class="mrg-vertical-15">
+                                                    <span class="text-black font-size-18">Others</span>
+                                                </li>
+        
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/inventory-journal">                                                     
+                                                        <span class="text-black">Inventory Journal</span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/accouting-journal">                                                     
+                                                        <span class="text-black">Accounting Journal</span>
+                                                    </a>
+                                                </li>
+                                                
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/credit-note">                                                     
+                                                        <span class="text-black">Credit Note</span>
+                                                    </a>
+                                                </li>
+                                                <li class="mrg-vertical-10">
+                                                    <a routerLink="/debit-note">                                                     
+                                                        <span class="text-black">Debit Note</span>
+                                                    </a>
+                                                </li>
+                                                        
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a>
+                                    <i class="ti-email font-size-18"></i>
+                                    <span class="pdd-left-5 ico-text">New Batch</span>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <ul class="nav-right">
+                           
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">                                  
+                                  <span class="">Classic Farms & Hatcheries</span>
+                                  <i class="ti-angle-down font-size-10 pdd-left-10"></i>
+                                </a> 
+                                <ul class="dropdown-menu farm-width">                                        
+                                   
+                                    <div class="col-md-12">
+                                       <div class="row" >
+                                       <div class="col-md-4">
+                                             <li class="mrg-vertical-15">                                            
+                                                <span class="text-black font-size-18">Master</span>
+                                             </li>
+                                           
+                                             <li class="mrg-vertical-10">
+                                                <a routerLink="/farm">                                                     
+                                                    <span class="text-black">Farm</span>
+                                                </a>
+                                             </li>
+                                               
+                                             <li class="mrg-vertical-10">
+                                                <a routerLink="/shed">                                                        
+                                                    <span class="text-black">Shed</span>
+                                                </a>
+                                             </li>
+
+                                             <li class="mrg-vertical-10">
+                                                 <a routerLink="/item">
+                                                     <span class="text-black">Item</span>
+                                                 </a>
+                                             </li>
+
+                                       </div>
+
+                                        <div class="col-md-4">
+                                             <li class="mrg-vertical-15">                    
+                                                <span class="text-black font-size-18">Flock</span>
+                                             </li> 
+                                             <li class="mrg-vertical-10">
+                                                <a routerLink="/strain-profile">                                                     
+                                                    <span class="text-black">Strain Profile</span>
+                                                </a>
+                                            </li>
+                                                   
+                                            <li class="mrg-vertical-10">
+                                                <a routerLink="/feed-program">                                                        
+                                                    <span class="text-black">Feed Program</span>
+                                                </a>
+                                            </li>
+    
+                                            <li class="mrg-vertical-10">
+                                                <a href="">
+                                                    <span class="text-black">Vaccine Program</span>
+                                                </a>
+                                            </li>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                             <li class="mrg-vertical-15">    
+                                                <span class="text-black font-size-18">Settings</span>
+                                             </li> 
+
+                                             <li class="mrg-vertical-10">
+                                                <a routerLink="/company-settings">                                                     
+                                                    <span class="text-black">Company Settings</span>
+                                                </a>
+                                            </li>
+                                                       
+                                            <li class="mrg-vertical-10">
+                                                <a routerLink="/chart-of-accounts">                                                        
+                                                    <span class="text-black">Chart of Accounts</span>
+                                                </a>
+                                            </li>
+        
+                                            <li class="mrg-vertical-10">
+                                                <a routerLink="/alerts-notifications">
+                                                    <span class="text-black">Alerts & Notifications</span>
+                                                </a>
+                                            </li>
+
+                                        </div>
+                                        </div>
+                                   </div>
+                                
+                                </ul>                                  
+                            </li>                         
+
+                            <!-- User Profile START-->
+                                <li class="user-profile dropdown">
+                                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                        <img class="profile-img img-fluid" src="assets/images/user.jpg">
+                                        <div class="user-info">
+                                            <span class="name pdd-right-5">Kumar</span>
+                                            <i class="ti-angle-down font-size-10"></i>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu">                                        
+                                        <li>
+                                            <a>                                            
+                                                <span><small>User Type: Administrator</small></span>
+                                                <br>
+                                                <span><small>Login at : 11:35AM</small></span>   
+                                                <br>                                        
+                                                <span><small>Last Activity : 12:00PM</small></span>
+                                            </a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a routerLink="/your-account">
+                                                <i class="ti-location-pin pdd-right-10"></i>
+                                                <span>Your Account</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a routerLink="/manage-users">
+                                                <i class="ti-light-bulb pdd-right-10"></i>
+                                                <span>Manage Users</span>
+                                            </a>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>
+                                            <a class="text-center" href="">                                               
+                                                <span>Logout</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <!-- User Profile END-->
+                            
+
+                                
+                            <li class="notifications dropdown">                                   
+                                    <a href="" class="dropdown-toggle top-ico" data-toggle="dropdown">
+                                        <i class="ti-bell font-size-18"></i>
+                                    </a>
+                                    <ul class="dropdown-menu ">
+                                        <li class="notice-header">
+                                            <i class="ti-bell pdd-right-10"></i>
+                                            <span>Notifications</span>
+                                        </li>                           
+                                   </ul>
+                            </li>
+
+                            <li>
+                                <a class="side-panel-toggle top-ico" href="javascript:void(0);" (click)="app.layout.sidePanelOpen = !app.layout.sidePanelOpen">
+                                    <i class="ti-menu-alt font-size-18"></i>
+                                </a>
+                            </li>
+
+                         <!--   <li>
+                                <a class="side-panel-toggle" href="javascript:void(0);" (click)="app.layout.sidePanelOpen = !app.layout.sidePanelOpen">
+                                    <i class="ti-align-right"></i>
+                                </a>
+                            </li> -->
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- Top Nav END -->
+
+                <!-- Side Panel START -->
+                <div class="side-panel" [ngClass]="{'side-panel-open' : app.layout.sidePanelOpen}">
+                    <div class="side-panel-wrapper bg-white">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#tab1" role="tab" data-toggle="tab">
+                                    <span>Tab 1</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tab2" role="tab" data-toggle="tab">
+                                    <span>Tab 2</span>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#tab3" role="tab" data-toggle="tab">
+                                    <span>Tab 3</span>
+                                </a>
+                            </li>
+                            <li class="panel-close">
+                                <a class="side-panel-toggle" href="javascript:void(0);" (click)="app.layout.sidePanelOpen = !app.layout.sidePanelOpen">
+                                    <i class="ti-close"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab1" role="tabpanel" class="tab-pane fade in active">
+                            </div>
+                            <div id="tab2" role="tabpanel" class="tab-pane fade">
+                            </div>
+                            <div id="tab3" role="tabpanel" class="tab-pane fade">
+                            </div>
+                        </div>	
+                    </div>
+                </div>	
+                <!-- Side Panel END -->
+
+                <!-- Content Wrapper START -->
+                <div class="main-content">
+                    <router-outlet></router-outlet>
+                </div>    
+                <!-- Content Wrapper END -->
+
+                <!-- Footer START -->
+               <!-- <footer class="content-footer">
+                    <div class="footer">
+                        <div class="copyright">
+                            <span>Copyright © 2017</span>
+                            <span class="go-right">
+                                <a href="" class="text-gray mrg-right-15">Link 1</a>
+                                <a  href="" class="text-gray">Link 2</a>
+                            </span>
+                        </div>
+                    </div>
+                </footer> -->
+                <!-- Footer END -->
+                
+            </div>
+            <!-- Page Container END -->
+
+         </div>
+    </div>    
+</div>

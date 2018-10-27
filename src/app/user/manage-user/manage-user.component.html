@@ -1,0 +1,424 @@
+<div class="container-fluid">
+
+      <!-- Page Title Start -->
+      <div class="page-title mrg-btm-30">
+            <b class="font-size-24 text-dark">Manage Users</b>
+      </div>
+      <!-- Page Title End -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tab-default">
+                    <ul class="nav nav-tabs tab-bottom" role="tablist">
+                      <li class="nav-item">
+                          <a href="#default-tab-1" class="nav-link active" role="tab" data-toggle="tab">
+                            <b class="font-size-16">Users</b>
+                          </a>                         
+                      </li>
+                      <li class="nav-item">
+                          <a href="#external" class="nav-link" role="tab" data-toggle="tab">
+                            <b class="font-size-16">External</b>
+                          </a>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content">
+
+                      <div role="tabpanel" class="tab-pane fade in active" id="default-tab-1">
+                          <div class="pdd-top-50 pdd-btm-20">
+                            <div class="card">
+                              <div class="card-block">                              
+                               <div class="row">
+                                  <div class="col-md-2 disp-inline">
+                                    <label class="pdd-top-10 pdd-right-5">Find by Name : </label>   
+                                    <input type="text" class="form-control">                              
+                                  </div>  
+                                  <div class="col-md-6"></div>
+                                  <div class="col-md-4">
+                                    <button class="btn btn-default float-right" data-toggle="modal" data-target="#add-user">Add User</button>
+                                  </div>
+                              </div>
+
+                              <div class="row pdd-top-20">
+                                <div class="col-md-12">                                  
+                                      <div class="table-overflow">
+                                           <table class="table table-striped">
+                                              <thead >
+                                                <tr class="tab-bottom">
+                                                  <th class="border right">NAME</th>
+                                                  <th class="border right">EMAIL</th>
+                                                  <th class="border right">USER TYPE</th>
+                                                  <th class="border right">STATUS</th>
+                                                  <th class="text-right border-tab-top">ACTION</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td  class="border right">Dinesh</td>
+                                                  <td  class="border right">dinesh@gmail.com</td>
+                                                  <td  class="border right">Admin</td>
+                                                  <td  class="border right">Active</td>
+                                                  <td class="text-right border-tab-top"> <a (click)="editUser()"> Edit</a> 
+                                                    <span class="dropdown-toggle"  data-toggle="dropdown">
+                                                      <i class="fa fa-caret-down font-size-16 pdd-left-10"></i>
+                                                    </span>
+                                                    <ul class="dropdown-menu user-width">
+                                                        <li>
+                                                          <a routerLink="/activity-log"><small>Activity Log</small></a>
+                                                        </li>
+                                                        <li class="divider"></li>
+                                                        <li>
+                                                          <a (click)="sweetAlert2()"><small>Delete</small></a>
+                                                        </li>                                                        
+                                                      </ul>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td  class="border right">Sampath</td>
+                                                  <td  class="border right">sampath@gmail.com</td>
+                                                  <td  class="border right">Manager</td>
+                                                  <td  class="border right">Invited</td>
+                                                  <td class="text-right border-tab-top">Resend invite <i class="fa fa-caret-down font-size-16 font-size-10 pdd-left-10"></i> </td>
+                                                </tr>
+
+                                                <tr>
+                                                  <td  class="border right">Ram</td>
+                                                  <td  class="border right">ram@gmail.com</td>
+                                                  <td  class="border right">Manager</td>
+                                                  <td  class="border right">Invited</td>
+                                                  <td class="text-right border-tab-top">Resend invite <i class="fa fa-caret-down font-size-16 pdd-left-10"></i> </td>
+                                                </tr>
+
+                                              </tbody>
+                                          </table>
+                                      </div>                                    
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                       </div>
+
+                       <!-- EXTERNAL START -->
+                       <div role="tabpanel" class="tab-pane fade" id="external">
+                          <div class="pdd-top-50 pdd-btm-20">
+                              <div class="card">
+                                <div class="card-block"> 
+
+                                  <div class="row">
+                                      <div class="col-md-3">                                                         
+                                      </div>  
+                                      <div class="col-md-6"></div>
+                                      <div class="col-md-3">
+                                        <button class="btn btn-default float-right" data-toggle="modal" data-target="#add-external">Invite External</button>
+                                      </div>
+                                  </div>
+
+                                    <div class="row pdd-top-20">
+                                      <div class="col-md-12">                                  
+                                            <div class="table-overflow">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                      <tr class="tab-bottom">
+                                                        <th class="border right">NAME</th>
+                                                        <th class="border right">EMAIL</th>
+                                                        <th class="border right">FIRM</th>
+                                                        <th class="border right">STATUS</th>
+                                                        <th class="text-right border-tab-top">ACTION</th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr>
+                                                        <td  class="border right">Dr. Raguram  </td>
+                                                        <td  class="border right">raguram@gmail.com</td>
+                                                        <td  class="border right">Sun Pharma</td>
+                                                        <td  class="border right">Active</td>
+                                                        <td class="text-right border-tab-top"> <a (click)="editExternal()"> Edit</a> 
+                                                          <span class="dropdown-toggle"  data-toggle="dropdown">
+                                                            <i class="fa fa-caret-down font-size-16 pdd-left-10"></i>
+                                                          </span> 
+                                                          <ul class="dropdown-menu user-width">
+                                                              <li>
+                                                                <a routerLink="/activity-log"><small>Activity Log</small></a>
+                                                              </li>
+                                                              <li class="divider"></li>
+                                                              <li>
+                                                                <a (click)="sweetAlert2()"><small>Delete</small></a>
+                                                              </li>                                                        
+                                                          </ul>
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td  class="border right">Paranthaman Vengadesan</td>
+                                                        <td  class="border right">vengadesh@gmail.com</td>
+                                                        <td  class="border right">Sun Poultry Breeds</td>
+                                                        <td  class="border right">Invite</td>
+                                                        <td class="text-right border-tab-top">Resend Invite <i class="fa fa-caret-down font-size-16 pdd-left-10"></i> </td>
+                                                      </tr>
+                                                    </tbody>
+                                                </table>
+                                              </div>                                    
+                                          </div>
+                                      </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                       </div>
+                       <!-- EXTERNAL END -->
+                    </div>
+              </div>  
+         </div>
+  </div>
+  </div>
+
+<!-- ADD NEW USER MODAL START-->
+
+  <div class="modal fade modal-fs" data-backdrop="static" data-keyboard="false" id="add-user">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content mrg-lft-14 width-81">
+
+            <!-- Modal Header Start -->
+              <div class="modal-header card-heading pdd-vertical-15 pdd-horizon-20">
+                        <h4 class="card-title font-size-24">
+                          <b *ngIf="enable != true">Add a new user</b>
+                          <b *ngIf="enable != false">Edit user settings</b>
+                        </h4>
+                        <h4 class="pdd-top-5">
+                            <a class="text-dark text-bold" href="" data-dismiss="modal">
+                                <i class="ti-close"></i>
+                            </a>
+                        </h4>     
+              </div>
+            <!-- Modal Header End -->
+
+              <div class="modal-body mrg-horizon-20 overflow-y-auto border-top">
+                  <div class="vertical-align">
+                          <form>
+                           <div class="row">
+                             <div class="col-md-12">
+                               
+                               <div class="row">
+                                 <div class="col-md-12">
+                                    <h4 class="pdd-btm-15"> User Contact Information</h4>
+                                 </div>
+                               </div> 
+                               
+                               <div class="row">
+                                 <div class="col-md-3">
+                                    
+                                    <div class="form-group">
+                                        <label>First Name :</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Last Name :</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Phone :</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Email :</label>
+                                        <input type="text" class="form-control">
+                                        <span>
+                                          <small *ngIf="enable != true"> This will be their User ID</small>
+                                          <small *ngIf="enable != false">Editing this email won't change your User ID for signing-in.
+                                              <br>You can change this in your user profile. Find out more.
+                                          </small>
+                                        </span>
+                                    </div>
+
+                                   
+                                 </div>
+
+                                 <div class="col-md-3" *ngIf="enable != false">
+                                    <div class="form-group">
+                                        <label>User Type :</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                 </div>
+
+                               </div>
+
+                               <div class="row">
+                                 <div class="col-md-3">
+                                    <button class="btn btn-info" *ngIf="enable != true">Previous</button>
+                                    <button class="btn btn-success float-right">Save</button>
+                                  </div>
+                               </div>
+                              
+                               
+                             </div>
+                           </div>
+                         </form>                      
+                  </div>                 
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+  <!-- ADD NEW USER MODAL END-->
+
+  <!-- SELECT USER TYPE START-->
+
+
+  <div class="modal fade modal-fs" data-backdrop="static" data-keyboard="false" id="select-user">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content mrg-lft-14 width-81">
+
+            <!-- Modal Header Start -->
+              <div class="modal-header card-heading pdd-vertical-15 pdd-horizon-20">
+                  <h4 class="card-title font-size-24"><b>Add a new user</b></h4>
+                  <h4 class="pdd-top-5">
+                      <a class="text-dark text-bold" href="" data-dismiss="modal">
+                          <i class="ti-close"></i>
+                      </a>
+                  </h4>                 
+              </div>
+            <!-- Modal Header End -->
+
+              <div class="modal-body mrg-horizon-20 overflow-y-auto border-top">
+                  <div class="vertical-align">
+                      
+                         <form>
+                           <div class="row">
+                             <div class="col-md-12">
+                               
+                               <div class="row">
+                                 <div class="col-md-12">
+                                    <h4 class="pdd-btm-15"> Select user type</h4>
+                                 </div>
+                               </div> 
+                               
+                               <div class="row">
+                                 <div class="col-md-12">
+                                    <div class="radio pdd-btm-30">
+                                        <input type="radio" name="form-1" id="form-1-1">
+                                        <label for="form-1-1" class="font-size-16">Company Admin</label>
+                                        <br>
+                                        <span class="pdd-left-30">Company admin can see and do everything. They can add users, update sign-in info, renew subscription, add externals, change prefences.</span>
+                                    </div>
+
+                                    <div class="radio pdd-btm-30">
+                                        <input type="radio" name="form-1" id="form-1-2">
+                                        <label for="form-1-2" class="font-size-16">Manager</label>
+                                        <br>
+                                        <span class="pdd-left-30">Manager can see and access anything under control center, receord keeping, flock, inventory, sales, purchase, and reports.</span>
+                                    </div> 
+                                    
+                                    <div class="radio pdd-btm-30">
+                                        <input type="radio" name="form-1" id="form-1-3">
+                                        <label for="form-1-3" class="font-size-16">Supervisor</label>
+                                        <br>
+                                        <span class="pdd-left-30">Supervisor can see and access only record keeping and flock.</span>
+                                    </div> 
+
+                                    <div class="radio pdd-btm-40">
+                                        <input type="radio" name="form-1" id="form-1-4">
+                                        <label for="form-1-4" class="font-size-16">Custom User</label>
+                                        <br>
+                                        <span class="pdd-left-30">Access can be generated modules.</span>
+                                    </div> 
+
+                                   
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#add-user">Next</button>
+                                   
+                                 </div>
+                               </div>
+                               
+                             </div>
+                           </div>
+                         </form>                      
+                  </div>                 
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+  <!-- SELECT USER TYPE END -->
+
+
+  <!-- ADD NEW EXTERNAL START -->
+
+  <div class="modal fade modal-fs" data-backdrop="static" data-keyboard="false" id="add-external">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content mrg-lft-14 width-81">
+
+            <!-- Modal Header Start -->
+              <div class="modal-header card-heading pdd-vertical-15 pdd-horizon-20">
+                  <h4 class="card-title font-size-24">
+                    <b *ngIf="enable != true">Add a new external</b>
+                    <b *ngIf="enable != false">Edit externals settings</b>
+                  </h4>
+                  <h4 class="pdd-top-5">
+                      <a class="text-dark text-bold" href="" data-dismiss="modal">
+                          <i class="ti-close"></i>
+                      </a>
+                  </h4>                 
+              </div>
+            <!-- Modal Header End -->
+
+              <div class="modal-body mrg-horizon-20 overflow-y-auto border-top">
+                  <div class="vertical-align">                      
+                         <form>
+                           <div class="row">
+                             <div class="col-md-12">
+                               
+                               <div class="row">
+                                 <div class="col-md-12">
+                                    <h4 class="pdd-btm-15"> External Contact Information</h4>
+                                 </div>
+                               </div> 
+                               
+                               <div class="row">
+                                 <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>First Name :</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Last Name :</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Phone :</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Email :</label>
+                                        <input type="text" class="form-control">
+                                        <span><small> This will be their User ID</small></span>
+                                    </div>                                    
+
+                                 </div>
+                               </div>
+
+                               <div class="row">
+                                  <div class="col-md-3">
+                                     <button class="btn btn-info" *ngIf="enable != true">Previous</button>
+                                     <button class="btn btn-success float-right">Save</button>
+                                   </div>
+                                </div>
+                               
+                             </div>
+                           </div>
+                         </form>                     
+                  </div>                 
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+
+  <!-- ADD NEW EXTERNAL END-->
